@@ -135,3 +135,4 @@ output_file = "UEFI_SecureBoot_entries.xlsx"
 wb.save(output_file)
 
 print(f"Excel 文件已生成：{output_file}")
+

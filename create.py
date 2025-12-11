@@ -2,13 +2,14 @@
 # PK, KEK, db: include self-signed X.509 certs using cryptography
 # dbx: include SHA256 hash blacklist entries
 
+import os
 import uuid, struct, hashlib
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.x509.oid import NameOID
 from cryptography import x509
 from datetime import datetime, timedelta, timezone  
-import os
+
 
 def gen_cert(subject_name):
     key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -58,8 +59,8 @@ EFI_CERT_SHA256_GUID = uuid.UUID("c1c41626-504c-4092-aca9-41f936934328")
 # Generate certs
 pk_cert = gen_cert("Platform Key (PK)")
 kek_cert = gen_cert("Key Exchange Key (KEK)")
-db_cert1 = gen_cert(" UEFI CA A (Sim)")
-db_cert2 = gen_cert(" UEFI CA B (Sim)")
+db_cert1 = gen_cert("UEFI CA A (Sim)")
+db_cert2 = gen_cert("UEFI CA B (Sim)")
 
 # Create PK, KEK, db
 PK_bin = make_sig_list(EFI_CERT_X509_GUID, [pk_cert])
