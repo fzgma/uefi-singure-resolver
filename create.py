@@ -1,6 +1,6 @@
-# Generate simulated UEFI Secure Boot databases
-# PK, KEK, db: include self-signed X.509 certs using cryptography
-# dbx: include SHA256 hash blacklist entries
+# 生成模拟的 UEFI 安全启动数据库
+# PK、KEK、db：使用 cryptography 生成自签名 X.509 证书
+# dbx：为 SHA256 哈希黑名单条目
 
 import os
 import uuid, struct, hashlib
@@ -8,8 +8,9 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.x509.oid import NameOID
 from cryptography import x509
-from datetime import datetime, timedelta, timezone  
+from datetime import datetime, timedelta, timezone
 
+save_path = "C:/code/py" #生成文件的路径
 
 def gen_cert(subject_name):
     key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -103,7 +104,6 @@ paths = {
     "dbx.bin": dbx_bin
 }
 
-save_path = "C:/code/py"
 
 for name, data in paths.items():
     with open(f"{save_path}/{name}", "wb") as f:

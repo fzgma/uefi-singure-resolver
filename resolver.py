@@ -1,5 +1,5 @@
-#UEFI Secure Boot database resolver.
-#Parses PK/KEK/DB/DBX signature lists and exports certificate info.
+#UEFI 安全启动数据库解析器。
+#解析 PK/KEK/DB/DBX 签名列表并导出证书信息。
 
 import struct
 import uuid
@@ -8,7 +8,6 @@ from cryptography.hazmat.backends import default_backend
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 
-# ----------- UEFI 解析函数（增强鲁棒性） -------------
 def parse_signature_list(data):
     offset = 0
     results = []
