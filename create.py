@@ -1,4 +1,4 @@
-# Generate simulated UEFI Secure Boot databases for a Gigabyte motherboard
+# Generate simulated UEFI Secure Boot databases
 # PK, KEK, db: include self-signed X.509 certs using cryptography
 # dbx: include SHA256 hash blacklist entries
 
