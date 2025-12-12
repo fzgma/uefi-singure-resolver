@@ -1,5 +1,5 @@
-#UEFI 安全启动数据库解析器。
-#解析 PK/KEK/DB/DBX 签名列表并导出证书信息。
+#UEFI 安全启动数据库解析器
+#解析 PK/KEK/DB/DBX 签名列表并导出证书信息到 CSV 文件
 
 import struct
 import uuid
