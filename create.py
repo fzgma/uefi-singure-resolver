@@ -10,7 +10,19 @@ from cryptography.x509.oid import NameOID
 from cryptography import x509
 from datetime import datetime, timedelta, timezone
 
-save_path = "C:/code/py" #生成文件的路径
+default_save_path = "."  # 默认使用运行目录
+
+# 允许用户自定义生成路径（留空使用当前运行目录）
+input_path = input(f"请输入生成文件的保存路径（留空使用当前运行目录）：").strip()
+if input_path == "":
+    save_path = os.getcwd()
+else:
+    save_path = input_path
+
+# 规范为绝对路径并确保目录存在
+save_path = os.path.abspath(save_path)
+os.makedirs(save_path, exist_ok=True)
+print(f"输出目录：{save_path}")
 
 def gen_cert(subject_name):
     key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -106,5 +118,7 @@ paths = {
 
 
 for name, data in paths.items():
-    with open(f"{save_path}/{name}", "wb") as f:
+    out_path = os.path.join(save_path, name)
+    with open(out_path, "wb") as f:
         f.write(data)
+    print(f"已写入：{out_path}")
