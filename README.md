@@ -48,7 +48,6 @@ pip install cryptography
 |------|------|
 | `create.py` | 生成模拟 UEFI 安全启动数据库二进制文件 |
 | `resolver.py` | 解析二进制数据库并导出到 CSV |
-| `PK.bin`、`KEK.bin`、`db.bin`、`dbx.bin` | 生成的安全启动数据库文件 |
 | `UEFI_SecureBoot_entries.csv` | 解析后的证书和签名数据 |
 
 ## 许可证
