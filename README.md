@@ -9,16 +9,16 @@
 
 ## 使用方法
 
-### 生成测试数据库
+### (可选)生成测试数据库
 ```bash
 python create.py
 ```
-运行时脚本会提示输入保存路径（留空使用当前运行目录）。脚本会创建目录（如不存在），并在所选目录生成：`PK.bin`、`KEK.bin`、`db.bin`、`dbx.bin`。示例：
+运行时脚本会提示输入保存路径（留空使用当前运行目录）。脚本会创建目录（如不存在），并在所选目录生成模拟数据库。示例：
 
 ```bash
 python create.py
-# 输入: D:/tmp/uefi_files
-# 输出: D:/tmp/uefi_files/PK.bin 等
+# 输入: D:/temp/uefi_files
+# 输出: D:/temp/uefi_files/PK.bin 等
 ```
 
 ### 解析并导出到 CSV
