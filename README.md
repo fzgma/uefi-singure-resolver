@@ -29,9 +29,9 @@ python resolver.py
 
 ## 依赖
 
-```
+
 cryptography
-```
+
 
 安装方式：
 ```bash
@@ -42,13 +42,6 @@ pip install -r requirements.txt
 pip install cryptography
 ```
 
-## 文件说明
-
-| 文件 | 说明 |
-|------|------|
-| `create.py` | 生成模拟 UEFI 安全启动数据库二进制文件 |
-| `resolver.py` | 解析二进制数据库并导出到 CSV |
-| `UEFI_SecureBoot_entries.csv` | 解析后的证书和签名数据 |
 
 ## 许可证
 
