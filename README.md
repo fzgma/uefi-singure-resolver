@@ -46,3 +46,7 @@ pip install cryptography
 ## 许可证
 
 见 LICENSE 文件。
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request！
