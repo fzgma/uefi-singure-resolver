@@ -1,11 +1,13 @@
 # UEFI 安全启动数据库解析器
 
-用于生成和解析 UEFI 安全启动数据库（PK、KEK、DB、DBX）的 Python 工具集。
+用于生成和解析 UEFI 安全启动数据库文件（PK、KEK、DB、DBX）的 Python 工具集。
+
+如果你有上述文件，可直接使用解析器。
 
 ## 功能
 
 - **生成器** (`create.py`)：使用自签名 X.509 证书和 SHA256 黑名单条目创建模拟 UEFI 安全启动数据库。
-- **解析器** (`resolver.py`)：解析二进制签名列表并将证书详情导出到 Excel。
+- **解析器** (`resolver.py`)：解析二进制签名列表并将证书详情导出为 csv 格式。
 
 ## 使用方法
 
@@ -25,7 +27,7 @@ python create.py
 ```bash
 python resolver.py
 ```
-运行时脚本会提示输入包含 PK/KEK/db/dbx 文件的目录路径（留空使用当前目录）。解析器不再严格检查文件后缀，它会在指定目录中按前缀匹配文件名（以 `PK`、`KEK`、`db`、`dbx` 开头的文件均可），找到后进行解析并导出为 `UEFI_SecureBoot_entries.csv`。
+运行时脚本会提示输入包含 PK/KEK/db/dbx 文件的目录路径（留空使用当前目录）。解析器不严格检查文件后缀，它会在指定目录中按前缀匹配文件名（以 `PK`、`KEK`、`db`、`dbx` 开头的文件均可），找到后进行解析并导出为 `UEFI_SecureBoot_entries.csv`。
 
 ## 依赖
 
