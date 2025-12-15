@@ -15,7 +15,7 @@
 ```bash
 python create.py
 ```
-运行时脚本会提示输入保存路径（留空使用当前运行目录）。脚本会创建目录（如不存在），并在所选目录生成模拟数据库。示例：
+运行时会提示输入保存路径（留空使用当前运行目录）。脚本会创建目录（如不存在），并在所选目录生成模拟数据库。示例：
 
 ```bash
 python create.py
@@ -27,7 +27,7 @@ python create.py
 ```bash
 python resolver.py
 ```
-运行时脚本会提示输入包含 PK/KEK/db/dbx 文件的目录路径（留空使用当前目录）。解析器不严格检查文件后缀，它会在指定目录中按前缀匹配文件名（以 `PK`、`KEK`、`db`、`dbx` 开头的文件均可），找到后进行解析并导出为 `UEFI_SecureBoot_entries.csv`。
+运行时会提示输入包含 PK/KEK/db/dbx 文件的目录路径（留空使用当前目录）。解析器不严格检查文件后缀，它会在指定目录中按前缀匹配文件名（以 `PK`、`KEK`、`db`、`dbx` 开头的文件均可），找到后进行解析并导出为 `UEFI_SecureBoot_entries.csv`。
 
 ## 依赖
 
@@ -43,7 +43,6 @@ pip install -r requirements.txt
 ```bash
 pip install cryptography
 ```
-
 
 ## 许可证
 
